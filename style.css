@@ -26,6 +26,10 @@
     scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
 :root {
     --body-color: #070A29;
     --gradient-color: linear-gradient(264.28deg, #dec7ff 38.2%, #5c27ff 103.12%), rgba(255, 255, 255, 0.1);
