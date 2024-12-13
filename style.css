@@ -38,9 +38,12 @@
     --black-color: #000;
     --transition: .3s;
     --transition2: .6s;
-    --Kaushan-font: "Kaushan Script", serif;
     --light-border: rgba(131, 131, 131, 0.5);
     --light-text:#CDCED4;
+    --Kaushan-font: "Kaushan Script", serif;
+    --conthrax-bold:Conthrax-bold;
+    --conthrax-light: Conthrax-light;
+    --conthrax-heavy: Conthrax-heavy;
 }
 
 img {
@@ -176,6 +179,17 @@ header{
     align-items: center;
     gap: 50px;
     padding: 5% 12%;
+    z-index: 5;
+}
+.hero_shape{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(92, 39, 255, 0.3) 100%);
+    filter: blur(10px);
+    z-index: -1;
 }
 .hero_content{
     width: 50%;
@@ -207,8 +221,23 @@ header{
     margin: 10px 0;
     color: var(--light-text);
 }
+.brandswiper{
+    width: 100%;
+    margin-top: 50px;
+}
+.brandswiper .swiper-slide img{
+    width: 100px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(40%);
+    transition: var(--transition);
+}
+.brandswiper .swiper-slide:hover img{
+    filter: brightness(100%);
+    cursor: pointer;
+}
 .hero_img {
-    width: 50%;
+    width: 35%;
     position: relative;
 }
 .hero_img img{
@@ -236,4 +265,73 @@ header{
     height: 100%;
     border-radius: 100px;
     background-color: rgba(255, 255, 255, 0.1);
+}
+.img_box{
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    padding: 20px;
+    width: 220px;
+    border-radius: 20px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: Anim_LR 5s linear infinite;
+}
+.img_box img {
+    width: 60px;
+    height: 60px;
+}
+.box_info{
+    display: flex;
+    flex-direction: column;
+}
+.box_info h2{
+    color: var(--black-color);
+    font-family: var(--conthrax-bold);
+    font-size: 1rem;
+}
+.box_info h5{
+    font-size: 0.9rem;
+
+    color: var(--black-color);
+}
+.img_box2{
+    width: 270px;
+    top: 70%;
+    left: -20%;
+    animation: Anim_TB 5s linear infinite;
+}
+
+
+
+
+
+
+
+
+/* ANIMATION */
+
+@keyframes Anim_LR {
+    0% {
+        transform: translateX(50px);
+    }
+    50% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(50px);
+    }
+}
+@keyframes Anim_TB {
+    0% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-50px);
+    }
 }
